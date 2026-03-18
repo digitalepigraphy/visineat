@@ -1466,6 +1466,10 @@ fetch(url)
         return response.text(); // get raw text instead of XML
     })
     .then(text => {
+		text = text.replaceAll(
+            "http://www.visineat.com/",
+            "https://digitalepigraphy.github.io/visineat/"
+        );
         // Wrap the text with your XML structure
         const wrappedXML =
             '<?xml version="1.0" encoding="UTF-8"?>' +
