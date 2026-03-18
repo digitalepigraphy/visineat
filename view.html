@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset="utf-8"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<style>
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+</style>
+
+
+<title></title>
+<link rel="shortcut icon" href="logo/VNlogo72.png" />
+<link rel="icon" href="logo/VNlogo72.png" /> 
+<link rel="apple-touch-icon" href="logo/VNlogo72.png" />
+<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script type="text/javascript" src="js/jszip.min.js"></script>
+	<script type="text/javascript" src="js/visineat-gui-1.0.js"></script>
+	<script type="text/javascript" src="js/visineat-1.1.js"></script>
+	<script type="text/javascript" src="js/visineat-app-1.0.js"></script>
+	<script type="text/javascript">
+		
+	
+	
+	var app;
+		
+	function onload(){
+	
+    const params = new URLSearchParams(window.location.search);
+
+	let id = params.get('o') || "";
+	// normalize
+	if (id === "null" || id === null) {
+		id = "";
+	}
+
+	let full = null;
+
+	if (params.has('full')) {
+		full = "true";
+	}
+
+
+	document.getElementById('container3d').innerHTML='';
+	app=new VNMainApp('container3d','container',{id, full});
+
+	/*
+	if(isset($_GET['full']))
+	{
+		echo 'full:"true",';
+	}
+	
+	if(isset($_GET['oolu']))
+	{
+		echo 'override_object_link_url:"'.$_GET['oolu'].'",';
+	}
+	
+	if(isset($_GET['collection']))
+	{
+		$collection=$_GET['collection'];
+		echo 'collection:"'.$collection.'",';
+		require('do/function_nextitems.php');
+		$items=function_nextitems($collection,$id,8);
+		if(count($items)==0)
+		{
+			require("do/function_randomdir.php");
+			$items[0]=function_randomdir();
+		}
+		echo 'next_items:["'.$items[0].'"';
+		for($i=1;$i<count($items);$i++) echo ',"'.$items[$i].'"';
+		echo ']';
+		$next_link='view?o='.$items[0].'&collection='.$collection;
+		
+	}
+	else 
+	{
+		require("do/function_randomdir.php");
+		$random_id=function_randomdir();
+		$next_link='view?o='.$random_id;
+	echo 'next_items:["'.$random_id.'","'.function_randomdir().'","'.function_randomdir().'","'.function_randomdir().'","'.function_randomdir().'","'.function_randomdir().'","'.function_randomdir().'","'.function_randomdir().'"]';
+	}
+	
+	?>});*/
+
+	
+	}
+	</script>
+</head>
+<body onload="vn.onLoad(onload);" style="margin:0px;background-color:rgb(0,0,0);" ondragover="event.dataTransfer.dropEffect='none';return false;">
+
+<div id="page" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+<div id="container_top" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+    <div id="container" style="position:absolute;top:0px;left:0px;width:100%;height:100%;overflow:hidden;">
+	<div id="container3d" style="position:absolute;top:0px;bottom:0px;background-color:rgb(0,0,0);left:0px;right:0px;">
+	<div style="display: table;position: absolute;height: 100%;width: 100%;"><div style="display: table-cell;vertical-align: middle;"><div style="margin-left: auto;margin-right: auto; width:128px;color:rgb(255,255,255);font-family:Arial;"><center><img src="/js/img/VNlogo128.gif"><br>Loading...</center></div></div></div>
+	</div>
+	</div>
+	<div id="main_header" style="display:none;width:50px;height:100%;right:0px;position:absolute;background-image:url(background_v.jpg);background-size: cover;">
+		<div style="float:left;background-size:cover;background-image:url('logo/VNlogo256.png');width:48px;height:48px;margin-left:2px;margin-top:2px;cursor:pointer;" onclick="parent.location='info/';"></div>
+		<div id="text_logo" style="float:left;height:50px;width:250px;margin-left:0px;margin-top:0px;cursor:pointer; -webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);-ms-transform: rotate(90deg);-o-transform: rotate(90deg);transform: rotate(90deg);-webkit-transform-origin: 10% 50%;-moz-transform-origin: 10% 50%;-ms-transform-origin: 10% 50%;-o-transform-origin: 10% 50%;transform-origin: 10% 50%;filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);" onclick="parent.location='info/';">
+		<div style="margin-top:2px;font-family:Arial;font-size:20px;font-weight:bold;color:rgb(250,250,250);text-shadow:0.5px 1px 0 #888,
+               1px 2px 0 #898989,
+               1.5px 3px 0 #777,
+               2px 4px 0 #797979,
+               2.5px 5px 0 #666,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);">Open 3D Data Toolbox</div>
+               <div style="position:absolute;left:5px;top:33px;font-family:Arial;font-size:10px;color:rgb(255,255,255);">v1.0</div><div style="position:absolute;left:130px;top:33px;font-family:Arial;font-size:10px;color:rgb(255,255,255);">VisiNeat</div>
+		</div>
+		<div style="display:none;float:right;margin:10px;margin-top:11px;">
+		<form class="search" method="post" action="index.html">
+      <input id="search_input" type="search" name="q" placeholder="Search..." autocomplete="off">
+      <ul class="search-ac">
+        <li><a href="javascript:void(0);" onclick="c.println('click');">Search Result #1<br><span>Description...</span></a></li>
+        <li><a href="javascript:void(0);" onclick="c.println('click');">Search Result #2<br><span>Description...</span></a></li>
+        <li><a href="javascript:void(0);" onclick="c.println('click');">Search Result #3<br><span>Description...</span></a></li>
+        <li><a href="javascript:void(0);" onclick="c.println('click');">Search Result #4</a></li>
+      </ul>
+    </form>
+		</div>
+		<div style="display:none;position:relative;float:right;margin-top:8px;margin-bottom:8px;margin-right:4px;"><a href="javascript:void(0);" class="myButton" onclick="app.showSettings();">|||</a></div>
+		<div style="display:none;position:relative;float:right;margin-top:8px;margin-bottom:8px;margin-right:4px;"><a href="javascript:void(0);" onclick="window.location='http://www.visineat.com/<?php echo $next_link;?>';return false;" class="myButton" >&gt;</a></div>
+		<div style="display:none;position:relative;float:right;margin-top:8px;margin-bottom:8px;margin-right:4px;"><a href="javascript:void(0);" class="myButton" onclick="app.openFile();">Open 3D File</a></div>
+		
+	</div>
+	<div  id="main_footer" style="display:none;height:40px;bottom:0px;background-color:rgb(0,0,0);position:absolute;width:100%;">
+	
+	<div style="position:absolute;width:100%;color:rgb(0,0,0);font-size:14px;font-family:Arial;">
+	
+	<div style="float:left;background-color:#000000;width:50%;">
+	<div style="width:100%;height:100%;box-sizing: border-box;padding:2px;">
+	<div style="border-radius:5px 5px 0px 0px;width:100%;min-height:15px;box-sizing: border-box;background-color:#555555;color:#FFFFFF;font-weight:700;padding:5px;"><?php echo $title;?></div>
+	<div style="border:1px solid #555555;padding:2px;background-color:#EEEEEE;">
+		<b>Title: </b><?php echo $title;?><br>
+		<b>Subtitle: </b><?php echo $subtitle;?><br>
+	</div>
+	</div>
+	</div>
+	
+	<div style="float:left;background-color:#000000;width:50%">
+	<div style="width:100%;height:100%;box-sizing: border-box;padding: 2px;">
+	<div style="border-radius:5px 5px 0px 0px;width:100%;min-height:15px;box-sizing: border-box;background-color:#555555;color:#FFFFFF;font-weight:700;padding:5px;"><?php echo $title;?></div>
+	<div style="border:1px solid #555555;padding:2px;background-color:#EEEEEE;">
+	<b>Title: </b><?php echo $title;?><br>
+	<b>Subtitle: </b><?php echo $subtitle;?><br>
+	</div>
+	</div>
+	</div>
+	
+	<div style="float:left;background-color:#000000;width:50%;height:225px;">
+	<div  style="width:100%;height:100%;box-sizing: border-box;padding: 2px;">
+	<div style="border-radius:5px 5px 0px 0px;width:100%;min-height:15px;box-sizing: border-box;background-color:#555555;color:#FFFFFF;font-weight:700;padding:5px;">Location</div>
+	<div id="map" style="width:100%;height:196px; box-sizing:border-box;border: 1px solid #555555;"></div>
+	</div>
+	</div>
+	
+	<div style="float:left;height:10px;background-color:rgb(0,0,0);width:100%;color:rgb(255,255,255);font-size:10px;font-family:Arial;overflow:hidden;"><div style="float:left;margin-left:4px;"><a href="info/"><span style="color:#FFFFFF;">&#169; 2011-2015 VisiNeat</span></a></div><div style="float:right;margin-right:4px;"><a href="terms/"><span style="color:#FFFFFF;">Terms &amp; Conditions</span></a></div>
+	
+	</div>
+	</div>
+	
+	
+</div>
+</div>
+
+</div>
+
+
+
+</body>
+</html>

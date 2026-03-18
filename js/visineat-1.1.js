@@ -31,7 +31,7 @@
 function VisiNeatAPI()
 {
 	this.libs={};
-	this.hostname="";
+	this.hostname="digitalepigraphy.github.io/visineat/";
 }
 
 VisiNeatAPI.prototype.onload=function(onLoad){this.importScripts(onLoad);};
@@ -64,14 +64,14 @@ VisiNeatAPI.prototype.importScripts=function(src,onLoad)
 
 VisiNeatAPI.prototype.loaded=function(src)
 {
-  var src_=(('https:' == document.location.protocol) ? 'https:' : 'http:')+'//www.visineat.com/js/'+src+'.js';
+  var src_=(('https:' == document.location.protocol) ? 'https:' : 'http:')+'//'+this.hostname+'js/'+src+'.js';
   if(typeof this.libs[src_]!=='undefined') return true;
   else return false;
 }
 
 VisiNeatAPI.prototype.importScript=function(src,onLoad)
 {
-  var src_=(('https:' == document.location.protocol) ? 'https:' : 'http:')+'//www.visineat.com/js/'+src+'.js';
+  var src_=(('https:' == document.location.protocol) ? 'https:' : 'http:')+'//'+this.hostname+'js/'+src+'.js';
   if(typeof this.libs[src_]!=='undefined')
   {
 	onLoad();

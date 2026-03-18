@@ -68,7 +68,7 @@ function VNMainApp(div_name3d, div_name,file_info)
 	this.console.visineatCommand=function(name,vars)
 	{
 		self.console.setPromptEnabled(false);
-		self.console.postCommand((('https:' == document.location.protocol) ? 'https:' : 'http:')+"://www.visineat.com/do/"+name+".php",vars,function(xml)
+		self.console.postCommand((('https:' == document.location.protocol) ? 'https:' : 'http:')+"://digitalepigraphy.github.io/visineat/do/"+name+".php",vars,function(xml)
 		{
 			if(xml==null) self.console.error(name+" failed");
 			else if(xml.getElementsByTagName("success")[0].innerHTML!="true") self.console.error(name+" failed. "+xml.getElementsByTagName("comments")[0].innerHTML);
@@ -102,7 +102,7 @@ function VNMainApp(div_name3d, div_name,file_info)
 		else if(com=='reload')
 		{
 			if(self.file_info.id)
-				document.location=(('https:' == document.location.protocol) ? 'https:' : 'http:')+'//www.visineat.com/view?o='+self.file_info.id+self.file_info.propagate_flags;
+				document.location=(('https:' == document.location.protocol) ? 'https:' : 'http:')+'//digitalepigraphy.github.io/visineat/view?o='+self.file_info.id+self.file_info.propagate_flags;
 			else self.console.error('File ID is missing.');
 			
 			return true;
@@ -258,10 +258,10 @@ function VNMainApp(div_name3d, div_name,file_info)
 	if(this.file_info.full) this.toolbar_y.setVisible(true);
 	
 	var b=new RetractableToolbarButton(this.toolbar_x);
-	b.setIcon('http://www.visineat.com/js/img/VNlogo256.png',0);
-	//if(this.inIframe()) b.setLink('http://www.visineat.com/view?o='+this.file_info.id);
+	b.setIcon('https://digitalepigraphy.github.io/visineat/js/img/VNlogo256.png',0);
+	//if(this.inIframe()) b.setLink('https://digitalepigraphy.github.io/visineat/view?o='+this.file_info.id);
 	//else
-		b.setLink('https://www.visineat.com/os');
+		b.setLink('https://digitalepigraphy.github.io/visineat/os');
 	
 	//b.setEnabled(false);
 	
@@ -270,23 +270,23 @@ function VNMainApp(div_name3d, div_name,file_info)
 	this.interaction_menu=new RetractableToolbarButton(this.toolbar_x);
 	this.interaction_menu.setLabel('Change interaction mode');
 	this.move_button=new RetractableToolbarButton(this.interaction_menu);
-	this.move_button.setIcon('http://www.visineat.com/js/img/move_icon.png');
+	this.move_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/move_icon.png');
 	this.move_button.setLabel('Move object');
 	//this.move_button.onClick=ui_callback;
 	
 	this.rotate_button=new RetractableToolbarButton(this.interaction_menu);
-	this.rotate_button.setIcon('http://www.visineat.com/js/img/rotate_icon.png');
+	this.rotate_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/rotate_icon.png');
 	this.rotate_button.setLabel('Rotate object');
 	this.interaction_menu.setSelectedOption(this.rotate_button);
 	//this.rotate_button.onClick=ui_callback;
 	
 	this.zoom_button=new RetractableToolbarButton(this.interaction_menu);
-	this.zoom_button.setIcon('http://www.visineat.com/js/img/zoom_icon.png');
+	this.zoom_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/zoom_icon.png');
 	this.zoom_button.setLabel('Zoom in or out');
 	//this.zoom_button.onClick=ui_callback;
 	
 	this.relight_button=new RetractableToolbarButton(this.interaction_menu);
-	this.relight_button.setIcon('http://www.visineat.com/js/img/relight_icon.png');
+	this.relight_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/relight_icon.png');
 	this.relight_button.setLabel('Change lighting direction');
 	//this.relight_button.onClick=ui_callback;
 	this.interaction_menu.onSelect=function(opt)
@@ -308,23 +308,23 @@ function VNMainApp(div_name3d, div_name,file_info)
 	
 	b=new RetractableToolbarButton(this.toolbar_x);
 	var b2=new RetractableToolbarButton(b);
-	b2.setIcon('http://www.visineat.com/js/img/preset1_icon.png');
+	b2.setIcon('https://digitalepigraphy.github.io/visineat/js/img/preset1_icon.png');
 	b2.setLabel('3D visualization with shading');
 	
 	b2=new RetractableToolbarButton(b);
-	b2.setIcon('http://www.visineat.com/js/img/preset2_icon.png');
+	b2.setIcon('https://digitalepigraphy.github.io/visineat/js/img/preset2_icon.png');
 	b2.setLabel('3D shading with depthmap');
 	
 	b2=new RetractableToolbarButton(b);
-	b2.setIcon('http://www.visineat.com/js/img/preset3_icon.png');
+	b2.setIcon('https://digitalepigraphy.github.io/visineat/js/img/preset3_icon.png');
 	b2.setLabel('3D depthmap visualization');
 	
 	b2=new RetractableToolbarButton(b);
-	b2.setIcon('http://www.visineat.com/js/img/preset4_icon.png');
+	b2.setIcon('https://digitalepigraphy.github.io/visineat/js/img/preset4_icon.png');
 	b2.setLabel('3D edgemap visualization');
 	
 	b2=new RetractableToolbarButton(b);
-	b2.setIcon('http://www.visineat.com/js/img/preset5_icon.png');
+	b2.setIcon('https://digitalepigraphy.github.io/visineat/js/img/preset5_icon.png');
 	b2.setLabel('3D visualization of original images');
 	
 	b.setSelectedOption(b2);
@@ -426,17 +426,17 @@ function VNMainApp(div_name3d, div_name,file_info)
 			};
 	
 	b=new RetractableToolbarButton(this.toolbar_x);
-	b.setIcon('http://www.visineat.com/js/img/share_icon.png');
+	b.setIcon('https://digitalepigraphy.github.io/visineat/js/img/share_icon.png');
 	b.setLink('');
 	b.setLabel('Share');
 	b.onClick=function()
 	{	
-		var app=self.wm.installApp('http://www.visineat.com/js/apps/social_nets/','Sharing options');
+		var app=self.wm.installApp('https://digitalepigraphy.github.io/visineat/js/apps/social_nets/','Sharing options');
 		app.start(function(app){new SocialNetsApp(app);});
 	};
 	
 	b=new RetractableToolbarButton(this.toolbar_x);
-	b.setIcon('http://www.visineat.com/js/img/embed_icon.png');
+	b.setIcon('https://digitalepigraphy.github.io/visineat/js/img/embed_icon.png');
 	b.setLink('');
 	b.setLabel('Embed');
 	b.onClick=function()
@@ -459,34 +459,34 @@ function VNMainApp(div_name3d, div_name,file_info)
 			d.style.fontWeight='bold';
 			d.style.fontSize='14px';
 			d.style.textDecoration='none';
-			d.innerHTML='Copy the following HTML tag and paste it in your site:<br><br><textarea style="border-radius:5px;height:80px;width:90%;font-family:Courier;font-size:14px;" readonly>&lt;iframe src="http://www.visineat.com/view?o='+self.file_info.id+'" width="600px" height="400px" frameborder="0" scrolling="no"&gt;&lt;/iframe&gt;</textarea>';
+			d.innerHTML='Copy the following HTML tag and paste it in your site:<br><br><textarea style="border-radius:5px;height:80px;width:90%;font-family:Courier;font-size:14px;" readonly>&lt;iframe src="https://digitalepigraphy.github.io/visineat/view?o='+self.file_info.id+'" width="600px" height="400px" frameborder="0" scrolling="no"&gt;&lt;/iframe&gt;</textarea>';
 	};
 	
 	this.projector_menu=new RetractableToolbarButton(this.toolbar_x);
 	this.projector_menu.setLabel('Change viewing mode');
 		
 	this.cross_eyes_button=new RetractableToolbarButton(this.projector_menu);
-	this.cross_eyes_button.setIcon('http://www.visineat.com/js/img/crossed_eyes_icon.png');
+	this.cross_eyes_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/crossed_eyes_icon.png');
 	this.cross_eyes_button.setLabel('Crossed eyes');
 	
 	this.parallel_eyes_button=new RetractableToolbarButton(this.projector_menu);
-	this.parallel_eyes_button.setIcon('http://www.visineat.com/js/img/parallel_eyes_icon.png');
+	this.parallel_eyes_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/parallel_eyes_icon.png');
 	this.parallel_eyes_button.setLabel('Parallel eyes');
 	
 	this.red_blue_button=new RetractableToolbarButton(this.projector_menu);
-	this.red_blue_button.setIcon('http://www.visineat.com/js/img/red_cyan_icon.png');
+	this.red_blue_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/red_cyan_icon.png');
 	this.red_blue_button.setLabel('Red/Cyan glasses');
 	
 	this.side_by_side_button=new RetractableToolbarButton(this.projector_menu);
-	this.side_by_side_button.setIcon('http://www.visineat.com/js/img/3dtv_icon.png');
+	this.side_by_side_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/3dtv_icon.png');
 	this.side_by_side_button.setLabel('3D TV display');
 	
 	this.oculus_button=new RetractableToolbarButton(this.projector_menu);
-	this.oculus_button.setIcon('http://www.visineat.com/js/img/oculus_icon.png');
+	this.oculus_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/oculus_icon.png');
 	this.oculus_button.setLabel('Oculus head mounted display');
 	
 	this.eyes_button=new RetractableToolbarButton(this.projector_menu);
-	this.eyes_button.setIcon('http://www.visineat.com/js/img/eye_icon.png');
+	this.eyes_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/eye_icon.png');
 	this.eyes_button.setLabel('Bare eye vision');
 	this.projector_menu.setSelectedOption(this.eyes_button);
 	
@@ -562,12 +562,12 @@ function VNMainApp(div_name3d, div_name,file_info)
 	b.setLink('');
 	if(!this.inIframe() || this.file_info.full)
 	{
-		b.setIcon('http://www.visineat.com/js/img/more_icon.png');
+		b.setIcon('https://digitalepigraphy.github.io/visineat/js/img/more_icon.png');
 		b.setLabel('App menu');
 	}
 	else
 	{
-		b.setIcon('http://www.visineat.com/js/img/more_icon.png');
+		b.setIcon('https://digitalepigraphy.github.io/visineat/js/img/more_icon.png');
 		b.setLabel(['More options and App menu','(in full screen)']);
 	}
 	b.onClick=function(b)
@@ -575,44 +575,44 @@ function VNMainApp(div_name3d, div_name,file_info)
 		if(self.file_info.full){}
 		else if(self.inIframe())
 		{	
-			//window.open('http://www.visineat.com/view?o='+self.file_info.id);
-			parent.location='http://www.visineat.com/view?o='+self.file_info.id;
+			//window.open('https://digitalepigraphy.github.io/visineat/view?o='+self.file_info.id);
+			parent.location='https://digitalepigraphy.github.io/visineat/view?o='+self.file_info.id;
 			return;
 		}
 		var menu=self.wm.createIconMenuWindow('App Menu');
 		
-		menu.addApp('http://www.visineat.com/js/apps/gesture_demo/','Gesture Demo',function(app){new DEAdemo(app);});
+		menu.addApp('https://digitalepigraphy.github.io/visineat/js/apps/gesture_demo/','Gesture Demo',function(app){new DEAdemo(app);});
 		
-		//menu.addIcon('http://www.visineat.com/js/img/gesture_demo_icon.png','Gesture Demo',function(){self.demo.start();});
+		//menu.addIcon('https://digitalepigraphy.github.io/visineat/js/img/gesture_demo_icon.png','Gesture Demo',function(){self.demo.start();});
 		
-		menu.addIcon('http://www.visineat.com/js/img/console_icon.png','Console',function(){self.console.getWindow().show();self.console.focus();});
+		menu.addIcon('https://digitalepigraphy.github.io/visineat/js/img/console_icon.png','Console',function(){self.console.getWindow().show();self.console.focus();});
 		
-		menu.addApp('http://www.visineat.com/js/apps/system_info/','System Info',function(app){new SystemInfoApp(app);});
+		menu.addApp('https://digitalepigraphy.github.io/visineat/js/apps/system_info/','System Info',function(app){new SystemInfoApp(app);});
 		
-		menu.addIcon('http://www.visineat.com/js/img/edit_icon.png','Record editor',dev_callback);
+		menu.addIcon('https://digitalepigraphy.github.io/visineat/js/img/edit_icon.png','Record editor',dev_callback);
 		
-		menu.addIcon('http://www.visineat.com/js/img/annotation_icon.png','Annotation editor',dev_callback);
+		menu.addIcon('https://digitalepigraphy.github.io/visineat/js/img/annotation_icon.png','Annotation editor',dev_callback);
 		
-		menu.addIcon('http://www.visineat.com/js/img/mesh_editor_icon.png','Mesh editor',dev_callback);
+		menu.addIcon('https://digitalepigraphy.github.io/visineat/js/img/mesh_editor_icon.png','Mesh editor',dev_callback);
 		
-		menu.addIcon('http://www.visineat.com/js/img/caliber_icon.png','Measurement tool',dev_callback);
+		menu.addIcon('https://digitalepigraphy.github.io/visineat/js/img/caliber_icon.png','Measurement tool',dev_callback);
 		
-		menu.addIcon('http://www.visineat.com/js/img/camera_icon.png','Camera',camera_callback);
+		menu.addIcon('https://digitalepigraphy.github.io/visineat/js/img/camera_icon.png','Camera',camera_callback);
 		
-		menu.addIcon('http://www.visineat.com/js/img/gavel_icon.png','Report files',dev_callback);
+		menu.addIcon('https://digitalepigraphy.github.io/visineat/js/img/gavel_icon.png','Report files',dev_callback);
 	};
 	
 	b=new RetractableToolbarButton(this.toolbar_y);
 	this.surface_button=new RetractableToolbarButton(b);
-	this.surface_button.setIcon('http://www.visineat.com/js/img/solid_icon.png');
+	this.surface_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/solid_icon.png');
 	this.surface_button.setLabel('Surface rendering');
 	
 	this.edge_button=new RetractableToolbarButton(b);
-	this.edge_button.setIcon('http://www.visineat.com/js/img/edges_icon.png');
+	this.edge_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/edges_icon.png');
 	this.edge_button.setLabel('Edge redering');
 	
 	this.vertex_button=new RetractableToolbarButton(b);
-	this.vertex_button.setIcon('http://www.visineat.com/js/img/points_icon.png');
+	this.vertex_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/points_icon.png');
 	this.vertex_button.setLabel('Vertex rendering');
 	b.setSelectedOption(this.surface_button);
 	b.setLabel('Change rendering mode');
@@ -627,11 +627,11 @@ function VNMainApp(div_name3d, div_name,file_info)
 	
 	b=new RetractableToolbarButton(this.toolbar_y);
 	this.perspective_button=new RetractableToolbarButton(b);
-	this.perspective_button.setIcon('http://www.visineat.com/js/img/perspective_icon.png');
+	this.perspective_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/perspective_icon.png');
 	this.perspective_button.setLabel('Perspective projection');
 	
 	this.orthographic_button=new RetractableToolbarButton(b);
-	this.orthographic_button.setIcon('http://www.visineat.com/js/img/orthographic_icon.png');
+	this.orthographic_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/orthographic_icon.png');
 	this.orthographic_button.setLabel('Orthographic projection');
 	b.setSelectedOption(this.perspective_button);
 	b.setLabel('Change projection mode');
@@ -644,20 +644,20 @@ function VNMainApp(div_name3d, div_name,file_info)
 	
 	this.map_menu=new RetractableToolbarButton(this.toolbar_y);
 	this.map1_button=new RetractableToolbarButton(this.map_menu);
-	this.map1_button.setIcon('http://www.visineat.com/js/img/map1_icon.png');
+	this.map1_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/map1_icon.png');
 	this.map1_button.setLabel('No map');
 	this.map1_button.setLabel('No map');
 	
 	this.map2_button=new RetractableToolbarButton(this.map_menu);
-	this.map2_button.setIcon('http://www.visineat.com/js/img/map2_icon.png');
+	this.map2_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/map2_icon.png');
 	this.map2_button.setLabel('Depth map');
 	
 	this.map3_button=new RetractableToolbarButton(this.map_menu);
-	this.map3_button.setIcon('http://www.visineat.com/js/img/map3_icon.png');
+	this.map3_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/map3_icon.png');
 	this.map3_button.setLabel('Edge map');
 		
 	/*this.shader5_button=new RetractableToolbarButton(b);
-	this.shader5_button.setIcon('http://www.visineat.com/js/img/shader5_icon.png');
+	this.shader5_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/shader5_icon.png');
 	this.shader5_button.setLabel('Original image');*/
 	this.map_menu.setSelectedOption(this.map1_button);
 	this.map_menu.setLabel('Use a map');
@@ -686,28 +686,28 @@ function VNMainApp(div_name3d, div_name,file_info)
 	this.colormap_menu.setEnabled(false);
 	
 	this.colormap1_button=new RetractableToolbarButton(this.colormap_menu);
-	this.colormap1_button.setIcon('http://www.visineat.com/js/img/colormap1_icon.png');
+	this.colormap1_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/colormap1_icon.png');
 	this.colormap1_button.setLabel('Heat colormap');
 	this.colormap_menu.setSelectedOption(this.colormap1_button);
 	
 	this.colormap2_button=new RetractableToolbarButton(this.colormap_menu);
-	this.colormap2_button.setIcon('http://www.visineat.com/js/img/colormap2_icon.png');
+	this.colormap2_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/colormap2_icon.png');
 	this.colormap2_button.setLabel('Inverse heat colormap');
 	
 	this.colormap3_button=new RetractableToolbarButton(this.colormap_menu);
-	this.colormap3_button.setIcon('http://www.visineat.com/js/img/colormap3_icon.png');
+	this.colormap3_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/colormap3_icon.png');
 	this.colormap3_button.setLabel('Grayscale colormap');
 	
 	this.colormap4_button=new RetractableToolbarButton(this.colormap_menu);
-	this.colormap4_button.setIcon('http://www.visineat.com/js/img/colormap4_icon.png');
+	this.colormap4_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/colormap4_icon.png');
 	this.colormap4_button.setLabel('Inverse grayscale colormap');
 	
 	this.colormap5_button=new RetractableToolbarButton(this.colormap_menu);
-	this.colormap5_button.setIcon('http://www.visineat.com/js/img/colormap5_icon.png');
+	this.colormap5_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/colormap5_icon.png');
 	this.colormap5_button.setLabel('Heat colormap 2');
 	
 	this.colormap6_button=new RetractableToolbarButton(this.colormap_menu);
-	this.colormap6_button.setIcon('http://www.visineat.com/js/img/colormap6_icon.png');
+	this.colormap6_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/colormap6_icon.png');
 	this.colormap6_button.setLabel('Inverse heat colormap 2');
 	
 	
@@ -731,7 +731,7 @@ function VNMainApp(div_name3d, div_name,file_info)
 	};
 	
 	this.texture_button=new RetractableToolbarButton(this.toolbar_y);
-	this.texture_button.setIcon('http://www.visineat.com/js/img/texture_icon.png');
+	this.texture_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/texture_icon.png');
 	this.texture_button.setLabel('Show/hide texture');
 	this.texture_button.setSelected(true);
 	this.texture_button.onClick=function(btn)
@@ -741,7 +741,7 @@ function VNMainApp(div_name3d, div_name,file_info)
 	};
 	
 	this.lightswitch_button=new RetractableToolbarButton(this.toolbar_y);
-	this.lightswitch_button.setIcon('http://www.visineat.com/js/img/lightswitch_icon.png');
+	this.lightswitch_button.setIcon('https://digitalepigraphy.github.io/visineat/js/img/lightswitch_icon.png');
 	this.lightswitch_button.setLabel('Switch virtual light on/off');
 	this.lightswitch_button.onClick=function(btn)
 	{
@@ -755,7 +755,7 @@ function VNMainApp(div_name3d, div_name,file_info)
 	};
 	
 	b=new RetractableToolbarButton(this.toolbar_y);
-	b.setIcon('http://www.visineat.com/js/img/download_icon.png');
+	b.setIcon('https://digitalepigraphy.github.io/visineat/js/img/download_icon.png');
 	b.setLabel('Download');
 	b.setLink('');
 	b.onClick=dev_callback;
@@ -967,7 +967,7 @@ VNMainApp.prototype.openFile=function()
 {
 	this.gui.playClick1Sound();
 	var w=this.wm.uploadFileWindow('Open 3D File','Drag and drop or Click to select a 3D file from your computer.<br><br><font style="font-weight:normal;text-align:left;">This feature is currently under development. <br> Get preview access when you join our dev team!</font>',
-	'http://www.visineat.com/do/upload/',function(){},function(xmlhttp)
+	'https://digitalepigraphy.github.io/visineat/do/upload/',function(){},function(xmlhttp)
 	{
 		var xml=xmlhttp.responseXML;
 		
@@ -975,7 +975,7 @@ VNMainApp.prototype.openFile=function()
 		if(e.length>0 && e[0].innerHTML=='true')
 		{
 			e=xml.getElementsByTagName('dir');
-			location.assign("http://www.visineat.com/view?o="+e[0].innerHTML);
+			location.assign("https://digitalepigraphy.github.io/visineat/view?o="+e[0].innerHTML);
 		}
 	});			
 };
@@ -1032,7 +1032,7 @@ VNMainApp.prototype.onCanvasSetup=function()
    
    
 	this.room=new WebGLImageComposition(this.canvas);
-   //this.room.load("http://www.visineat.com/rooms/museum");
+   //this.room.load("https://digitalepigraphy.github.io/visineat/rooms/museum");
    this.room.setBrightness(1);
    this.obj1=new StructureSensorZIP(this.canvas);
    this.obj1.onTap=function(e)
@@ -1085,10 +1085,10 @@ VNMainApp.prototype.onCanvasSetup=function()
 			this.next_obj[i].setXYZ(xyz);
 			this.next_obj[i].setUV([0,0,1,0,1,1,0,1]);
 			this.next_obj[i].setTRI([0,1,2,0,2,3]);
-			this.next_obj[i].setTexture('http://www.visineat.com/db/'+this.file_info.next_items[i]+'/thumb.png',true);
+			this.next_obj[i].setTexture('https://digitalepigraphy.github.io/visineat/db/'+this.file_info.next_items[i]+'/thumb.png',true);
 			if(this.file_info.collection)
-			this.next_obj[i].link='http://www.visineat.com/view?o='+this.file_info.next_items[i]+this.file_info.propagate_flags;
-			else this.next_obj[i].link='http://www.visineat.com/view?o='+this.file_info.next_items[i];
+			this.next_obj[i].link='https://digitalepigraphy.github.io/visineat/view?o='+this.file_info.next_items[i]+this.file_info.propagate_flags;
+			else this.next_obj[i].link='https://digitalepigraphy.github.io/visineat/view?o='+this.file_info.next_items[i];
 			this.next_obj[i].onTap=function(e){document.location=e.object.link;};
 			
 			if(this.file_info.override_object_link_url)
@@ -1114,11 +1114,11 @@ VNMainApp.prototype.onCanvasSetup=function()
    };
    meta.load(this.file_info);
    
-   //this.obj1.load('http://www.visineat.com/db/Model-fishmount5.zip');//'http://www.visineat.com/db/Model-Rome-borghese-lion1.zip');
+   //this.obj1.load('https://digitalepigraphy.github.io/visineat/db/Model-fishmount5.zip');//'https://digitalepigraphy.github.io/visineat/db/Model-Rome-borghese-lion1.zip');
    //this.obj2=new StructureSensorZIP(this.canvas);
-   //this.obj2.load('http://www.digitalepigraphy.org/db/Model-14.zip');
+   //this.obj2.load('https://digitalepigraphy.github.io/visineat/db/Model-14.zip');
    //this.obj3=new StructureSensorZIP(this.canvas);
-   //obj3.load('http://www.digitalepigraphy.org/db/Model-15.zip');
+   //obj3.load('https://digitalepigraphy.github.io/visineat/db/Model-15.zip');
    //this.canvas.setBackgroundColor(16/255, 31/255, 115/255, 1.0); //blueprint blue
    this.canvas.setBackgroundColor(118/255, 0/255, 0/255, 1.0);
     //this.canvas.setBackgroundColor(0/255, 0/255, 255/255, 1.0);
@@ -1470,7 +1470,7 @@ VNMetaData.prototype.load=function(file_info)
 			self.onLoad(self.file_info);
 		}
 	}
-	xmlhttp.open("GET",(('https:' == document.location.protocol) ? 'https:' : 'http:')+"//www.visineat.com/db/"+this.file_info.id+"/meta/",true);
+	xmlhttp.open("GET",(('https:' == document.location.protocol) ? 'https:' : 'http:')+"//digitalepigraphy.github.io/visineat/db/"+this.file_info.id+"/meta/",true);
 	xmlhttp.send();
 };
 

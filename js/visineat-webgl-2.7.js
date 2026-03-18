@@ -85,7 +85,7 @@ function WebGLCanvas(div)
   
   this.canvas.addEventListener("webglcontextlost", function(event) {
     event.preventDefault();
-	window.location='http://www.visineat.com/js/webgl_error.html';
+	window.location='http://digitalepigraphy.github.io/visineat/js/webgl_error.html';
 }, false);
    
   this.createHeaders();
@@ -870,7 +870,7 @@ ThumbnailMaker.prototype.upload=function(id)
 	
 	var xmlhttp=new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {if (xmlhttp.readyState === 4) {}};
-	xmlhttp.open("POST", "http://www.visineat.com/do/thmb/", true);
+	xmlhttp.open("POST", "https://digitalepigraphy.github.io/visineat/do/thmb/", true);
 	xmlhttp.setRequestHeader("Content-Type", "multipart/form-data; boundary=" + boundary);
 	
 	var ui8a=new Uint8Array(message.length+this.data.length+message2.length);
@@ -1105,7 +1105,7 @@ WebGLCanvas.prototype.tick=function()
 WebGLCanvas.prototype.init=function()
 {
 	console.log('%cVisiNeat - Open 3D Data Toolbox', 'padding:28px 82px;line-height:90px;color:rgb(255,255,255);background-color:rgb(120,120,120);text-shadow: 0.5px 1px 0 #888, 1px 2px 0 #898989, 1.5px 3px 0 #777, 2px 4px 0 #797979, 2.5px 5px 0 #666, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);font-size: 40px;');
-	console.log('%cwww.visineat.com - Share your 3D world','padding:28px 46px;font-size: 18px;');
+	console.log('%cVisiNeat - Share your 3D world','padding:28px 46px;font-size: 18px;');
    
         try {
             this.gl = this.canvas.getContext("experimental-webgl",{antialias:false});
@@ -1136,14 +1136,14 @@ WebGLCanvas.prototype.showWebGLError=function()
 		var cnvs=this.canvas;
 	      imageObj.onload = function() {
 	        ctx.drawImage(imageObj, 0, 0, cnvs.width, cnvs.height);
-		    cnvs.addEventListener('click', function() { window.open("http://www.visineat.com/js/webgl_error.html");}, false);
+		    cnvs.addEventListener('click', function() { window.open("https://digitalepigraphy.github.io/visineat/js/webgl_error.html");}, false);
       		};
-      		imageObj.src = (('https:' == document.location.protocol) ? 'https:' : 'http:')+'//www.visineat.com/js/img/webgl_error-1.0.png';
+      		imageObj.src = (('https:' == document.location.protocol) ? 'https:' : 'http:')+'//digitalepigraphy.github.io/visineat/js/img/webgl_error-1.0.png';
 			}
 			else
 			{
 				var e=document.getElementById('error-message');
-				e.innerHTML='<a href="http://www.visineat.com/js/webgl_error.html" target="_blank"><img src="http://www.visineat.com/js/img/webgl_error-1.0.png" width="'+cnvs.width+'" height="'+cnvs.height+'"/></a>';
+				e.innerHTML='<a href="https://digitalepigraphy.github.io/visineat/js/webgl_error.html" target="_blank"><img src="https://digitalepigraphy.github.io/visineat/js/img/webgl_error-1.0.png" width="'+cnvs.width+'" height="'+cnvs.height+'"/></a>';
 			}
 };
 
@@ -2656,7 +2656,7 @@ function degToRad(degrees) {
 
 var VN_default_texture_image=new Image();
 VN_default_texture_image.crossOrigin = '';
-VN_default_texture_image.src = (('https:' == document.location.protocol) ? 'https:' : 'http:')+'//www.visineat.com/js/img/default_texture-1.0.png';
+VN_default_texture_image.src = (('https:' == document.location.protocol) ? 'https:' : 'http:')+'//digitalepigraphy.github.io/visineat/js/img/default_texture-1.0.png';
 
 /**
  * This class creates and handles a webGL texture. It can be used in conjunction with a WebGLObject.<br><br>
@@ -4209,7 +4209,7 @@ function WebGLLoadingAnimation(canvas)
 	_obj.setXYZ(_xyz);
 	_obj.setTriangles(_tri);
 	_obj.setUV(_uv);
-	_obj.setTexture((('https:' == document.location.protocol) ? 'https:' : 'http:')+'//www.visineat.com/js/img/VNlogo256.png');
+	_obj.setTexture((('https:' == document.location.protocol) ? 'https:' : 'http:')+'//digitalepigraphy.github.io/visineat/js/img/VNlogo256.png');
 	this.loading_obj=_obj;
 	
 	var n=64;
@@ -4349,7 +4349,7 @@ function WebGLWatermark(canvas)
 	
 	this.logo_obj=new WebGLObject(canvas);
 	this.logo_obj.createRect(0.2,0.2,1,1);
-	this.logo_obj.setTexture((('https:' == document.location.protocol) ? 'https:' : 'http:')+'//www.visineat.com/js/img/VNlogo_mask.png',true);
+	this.logo_obj.setTexture((('https:' == document.location.protocol) ? 'https:' : 'http:')+'//digitalepigraphy.github.io/visineat/js/img/VNlogo_mask.png',true);
 	this.logo_obj.getShader().useLighting(false);
 	this.logo_obj.getShader().useTexture(true);
 	var m=mat4.create();
