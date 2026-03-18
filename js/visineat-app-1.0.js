@@ -1456,7 +1456,7 @@ const self = this;
 const url = (document.location.protocol === 'https:' ? 'https:' : 'http:') +
     "//digitalepigraphy.github.io/visineat/db/" +
     this.file_info.id +
-    "/meta/";
+    "/metadata";
 
 fetch(url)
     .then(response => {
