@@ -1448,30 +1448,45 @@ VNMetaData.prototype.onLoad=function(file_info){};
 
 VNMetaData.prototype.load=function(file_info)
 {
-	this.file_info=file_info;
-	this.file_info.metadata=this;
-	var xmlhttp;
-	if (window.XMLHttpRequest)
-	{// code for IE7+, Firefox, Chrome, Opera, Safari
-		xmlhttp=new XMLHttpRequest();
-	}
-	else
-	{// code for IE6, IE5
-  		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	var self=this;
-	xmlhttp.onreadystatechange=function()
-  	{
-		if (xmlhttp.readyState==4 && xmlhttp.status==200)
-		{
-			self.xml=xmlhttp.responseXML;
-			self.file_info.xml=self.xml;
-			self._process();
-			self.onLoad(self.file_info);
-		}
-	}
-	xmlhttp.open("GET",(('https:' == document.location.protocol) ? 'https:' : 'http:')+"//digitalepigraphy.github.io/visineat/db/"+this.file_info.id+"/meta/",true);
-	xmlhttp.send();
+	this.file_info = file_info;
+this.file_info.metadata = this;
+
+const self = this;
+
+const url = (document.location.protocol === 'https:' ? 'https:' : 'http:') +
+    "//digitalepigraphy.github.io/visineat/db/" +
+    this.file_info.id +
+    "/meta/";
+
+fetch(url)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("HTTP error " + response.status);
+        }
+        return response.text(); // get raw text instead of XML
+    })
+    .then(text => {
+        // Wrap the text with your XML structure
+        const wrappedXML =
+            '<?xml version="1.0" encoding="UTF-8"?>' +
+            '<metadata>' +
+            '<field name="id" value="' + self.file_info.id + '"/>' +
+            text +
+            '</metadata>';
+
+        // Parse string into XML
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(wrappedXML, "application/xml");
+
+        self.xml = xmlDoc;
+        self.file_info.xml = xmlDoc;
+
+        self._process();
+        self.onLoad(self.file_info);
+    })
+    .catch(err => {
+        console.error("Failed to load metadata:", err);
+    });
 };
 
 VNMetaData.prototype._process=function()
