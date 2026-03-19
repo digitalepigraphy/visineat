@@ -235,8 +235,10 @@ function VNMainApp(div_name3d, div_name,file_info)
 	};
 	
 	this.canvas=new WebGLCanvas(document.getElementById(div_name3d));
-	this.canvas.setTitle(this.file_info.title);
-	this.canvas.setSubTitle(this.file_info.subtitle);
+	if(this.file_info.title !== undefined)
+		this.canvas.setTitle(this.file_info.title);
+	if(this.file_info.subtitle !== undefined)
+		this.canvas.setSubTitle(this.file_info.subtitle);
 	this.canvas.setTitleOpacity(1);
 	this.canvas.createProgressBar();
 	this.canvas.renderWhenNecessary();
