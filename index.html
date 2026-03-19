@@ -58,12 +58,13 @@
 			.then(response => response.json())
 			.then(data => {
 				let id=data.ids[Math.floor(Math.random() * data.ids.length)];
-				console.log(id);
+				
 				let ids=get_next_items(data.ids,id);
-				console.log(ids);
-				document.getElementById('container3d').innerHTML='';
-				app=new VNMainApp('container3d','container',{id, full,next_items:ids,collection});
-	
+				
+				//redirect to view page with id and collection as query parameters
+				window.location.href = `https://digitalepigraphy.github.io/visineat/view?o=${id}&collection=${collection}&full=1`;
+
+				
 			})
 			.catch(error => {
 				//document.getElementById('container3d').innerHTML='';
