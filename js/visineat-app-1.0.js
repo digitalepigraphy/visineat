@@ -237,8 +237,10 @@ function VNMainApp(div_name3d, div_name,file_info)
 	this.canvas=new WebGLCanvas(document.getElementById(div_name3d));
 	if(this.file_info.title !== undefined)
 		this.canvas.setTitle(this.file_info.title);
+	else this.canvas.setTitle('');
 	if(this.file_info.subtitle !== undefined)
 		this.canvas.setSubTitle(this.file_info.subtitle);
+	else this.canvas.setSubTitle('');
 	this.canvas.setTitleOpacity(1);
 	this.canvas.createProgressBar();
 	this.canvas.renderWhenNecessary();
