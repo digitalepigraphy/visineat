@@ -52,7 +52,6 @@
 	let collection = "public";
 	
 		//parse json file: https://digitalepigraphy.github.io/visineat/db/collection/+collection+/index.json
-		collection = params.get('collection');
 		// Fetch and parse the collection JSON
 		const collectionUrl = `https://digitalepigraphy.github.io/visineat/db/collection/${collection}/index.json`;
 		fetch(collectionUrl)
