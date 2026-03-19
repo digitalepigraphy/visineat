@@ -43,6 +43,23 @@
 		full = "true";
 	}
 
+	function get_next_items(colids, id) {
+		let ids = [];
+		let c = 0;
+		let found = false;
+		for (let i = 0; i < colids.length && ids.length < 8; i++) {
+			if (colids[i] == id) {
+				found = true;
+			} else if (found == true) {
+				ids.push(colids[i]);
+			}
+		}
+		for (let i = 0; i < colids.length && ids.length < 8; i++) {
+			ids.push(colids[i]);
+		}
+		return ids;
+	}
+
 	// collection
 	let collection = null;
 	if (params.has('collection')) {
@@ -53,10 +70,9 @@
 		fetch(collectionUrl)
 			.then(response => response.json())
 			.then(data => {
-				// Parsed JSON data is available in 'data'
-				console.log(data);
+				let ids=get_next_items(data.ids,id);
 				document.getElementById('container3d').innerHTML='';
-				app=new VNMainApp('container3d','container',{id, full,next_items:data.ids});
+				app=new VNMainApp('container3d','container',{id, full,next_items:ids,collection});
 	
 			})
 			.catch(error => {
