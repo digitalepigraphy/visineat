@@ -43,9 +43,33 @@
 		full = "true";
 	}
 
-
-	document.getElementById('container3d').innerHTML='';
-	app=new VNMainApp('container3d','container',{id, full,next_items:[id]});
+	// collection
+	let collection = null;
+	if (params.has('collection')) {
+		//parse json file: https://digitalepigraphy.github.io/visineat/db/collection/+collection+/index.json
+		collection = params.get('collection');
+		// Fetch and parse the collection JSON
+		const collectionUrl = `https://digitalepigraphy.github.io/visineat/db/collection/${collection}/index.json`;
+		fetch(collectionUrl)
+			.then(response => response.json())
+			.then(data => {
+				// Parsed JSON data is available in 'data'
+				console.log(data);
+				document.getElementById('container3d').innerHTML='';
+				app=new VNMainApp('container3d','container',{id, full,next_items:data.ids});
+	
+			})
+			.catch(error => {
+				document.getElementById('container3d').innerHTML='';
+				app=new VNMainApp('container3d','container',{id, full,next_items:[id]});
+	
+			});
+		
+	}
+	else{
+		document.getElementById('container3d').innerHTML='';
+		app=new VNMainApp('container3d','container',{id, full,next_items:[id]});
+	}
 
 	/*
 	if(isset($_GET['full']))
