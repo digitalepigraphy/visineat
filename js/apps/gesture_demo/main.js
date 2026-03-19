@@ -59,7 +59,7 @@ DEAdemo.prototype.load=function(canvas)
 		self.obj.push(circle);
 		
 		self.img=new WebGLTexture(self.canvas);
-		self.img.load('http://www.digitalepigraphy.org/js/DEMOhand.png');
+		self.img.load('https://digitalepigraphy.github.io/visineat/js/DEMOhand.png');
 		self.thumb_angle=0;
 		self.index_angle=0;
 		self.wrist_angle=0;
