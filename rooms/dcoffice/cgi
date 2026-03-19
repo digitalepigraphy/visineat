@@ -1,0 +1,192 @@
+texture texture3 wall1.png
+texture texture4 wall2.png
+texture texture5 wall3.png
+texture texture6 window.png
+texture texture7 cabinets.png
+texture texture8 cabinets_top.png
+texture texture9 bookcases.png
+texture texture10 bookcase_side.png
+texture texture11 carpet.png
+texture texture12 ceiling.png
+texture texture13 desk_top.png
+texture texture14 drawers.png
+alphaTexture texture15 computer1.png
+clearColor 0.0 0.0 0.0
+enable textures
+pushMatrix
+translate 0.0 -1.0 -1.3
+bindTexture texture3
+pushMatrix
+translate 0.0 1.75 0.0
+rectangle 6.0 1.5 1.0 1.0
+popMatrix
+bindTexture texture5
+pushMatrix
+translate 0.0 1.25 4.4
+rotate 180.0 0.0 1.0 0.0
+rectangle 6.0 2.5 1.0 1.0
+popMatrix
+bindTexture texture7
+pushMatrix
+translate 0.0 0.5 0.4
+rectangle 6.0 1.0 1.0 1.0
+popMatrix
+bindTexture texture8
+pushMatrix
+translate 0.0 1.0 0.2
+rotate 90.0 -1.0 0.0 0.0
+rectangle 6.0 0.4 1.0 1.0
+popMatrix
+bindTexture texture11
+pushMatrix
+translate 0.0 0.0 2.4
+rotate 90.0 -1.0 0.0 0.0
+rectangle 6.0 4.0 1.0 1.0
+popMatrix
+bindTexture texture12
+pushMatrix
+translate 0.0 2.5 2.2
+rotate 90.0 1.0 0.0 0.0
+rectangle 6.0 4.4 2.0 -2.5
+popMatrix
+bindTexture texture4
+pushMatrix
+translate -3.0 1.25 2.2
+rotate 90.0 0.0 1.0 0.0
+rectangle 4.4 2.5 1.0 1.0
+popMatrix
+bindTexture texture6
+pushMatrix
+translate 3.0 1.25 2.2
+rotate 90.0 0.0 -1.0 0.0
+rectangle 4.4 2.5 1.0 1.0
+popMatrix
+bindTexture texture9
+pushMatrix
+translate -2.6 1.15 3.25
+rotate 90.0 0.0 1.0 0.0
+rectangle 2.3 2.3 1.0 1.0
+popMatrix
+bindTexture texture10
+pushMatrix
+translate -2.8 1.15 2.1
+rotate 180.0 0.0 1.0 0.0
+rectangle 0.4 2.3 1.0 1.0
+popMatrix
+bindTexture texture10
+pushMatrix
+translate -2.8 1.15 4.4
+rectangle 0.4 2.3 1.0 1.0
+popMatrix
+bindTexture texture10
+pushMatrix
+translate -2.8 2.3 3.25
+rotate 180.0 0.0 1.0 0.0
+rotate 90.0 -1.0 0.0 0.0
+rotate 180.0 0.0 0.0 1.0
+rectangle 0.4 2.3 1.0 1.0
+popMatrix
+bindTexture texture13
+pushMatrix
+translate 1.35 0.8 3.9
+rotate 90.0 -1.0 0.0 0.0
+rectangle 3.3 1.0 1.0 1.0
+popMatrix
+bindTexture texture13
+pushMatrix
+translate 2.65 0.8 1.9
+rotate 90.0 -1.0 0.0 0.0
+rotate 90.0 0.0 0.0 1.0
+rectangle 3.0 0.7 -1.0 1.0
+popMatrix
+bindTexture texture14
+pushMatrix
+translate 0.1 0.4 3.4
+rotate 180.0 0.0 1.0 0.0
+rectangle 0.8 0.8 1.0 1.0
+popMatrix
+bindTexture texture14
+pushMatrix
+translate -0.3 0.4 3.9
+rotate 90.0 0.0 -1.0 0.0
+rectangle 1.0 0.8 1.0 1.0
+popMatrix
+bindTexture texture14
+pushMatrix
+translate 2.3 0.4 0.9
+rotate 90.0 0.0 -1.0 0.0
+rectangle 1.0 0.8 1.0 1.0
+popMatrix
+pushMatrix
+translate 1.4 0.775 3.4
+rotate 180.0 0.0 1.0 0.0
+rectangle 1.8 0.05 1.0 -0.1
+popMatrix
+pushMatrix
+translate 2.3 0.775 2.4
+rotate 90.0 0.0 -1.0 0.0
+rectangle 2.0 0.05 1.0 -0.1
+popMatrix
+color 0.3 0.3 0.3
+bindTexture texture14
+pushMatrix
+translate 0.5 0.375 3.9
+rotate 90.0 0.0 1.0 0.0
+rectangle 1.0 0.75 1.0 1.0
+popMatrix
+bindTexture texture14
+pushMatrix
+translate 2.65 0.375 1.4
+rectangle 0.7 0.75 1.0 1.0
+popMatrix
+bindTexture texture14
+pushMatrix
+translate 1.35 0.375 4.2
+rotate 180.0 0.0 1.0 0.0
+rectangle 3.3 0.75 1.0 1.0
+popMatrix
+bindTexture texture14
+pushMatrix
+translate 2.95 0.375 2.7
+rotate 90.0 0.0 -1.0 0.0
+rectangle 3.0 0.75 1.0 1.0
+popMatrix
+color 1.0 1.0 1.0
+bindTexture texture14
+pushMatrix
+translate 1.35 0.4 4.4
+rectangle 3.3 0.8 -1.0 1.0
+popMatrix
+bindTexture texture14
+pushMatrix
+translate 3.0 0.4 2.4
+rotate 90.0 0.0 1.0 0.0
+rectangle 4.0 0.8 1.0 1.0
+popMatrix
+bindTexture texture14
+pushMatrix
+translate 2.65 0.4 0.4
+rotate 180.0 0.0 -1.0 0.0
+rectangle 0.7 0.8 1.0 1.0
+popMatrix
+enable blend
+bindTexture texture15
+pushMatrix
+translate 1.35 1.1 4.1
+rotate 180.0 0.0 1.0 0.0
+rectangle 2.0 0.6 1.0 1.0
+popMatrix
+bindTexture texture15
+pushMatrix
+translate 2.5 1.1 3.85
+rotate 235.0 0.0 1.0 0.0
+rectangle 0.85 0.6 0.5 1.0
+popMatrix
+pushMatrix
+translate 2.75 1.1 2.5
+rotate 90.0 0.0 -1.0 0.0
+rectangle 2.0 0.6 -1.0 1.0
+popMatrix
+disable blend
+disable textures
+popMatrix

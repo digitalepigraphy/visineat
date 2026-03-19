@@ -1,0 +1,76 @@
+texture window wall5.png
+texture floor floor.png
+texture dw_wall wall4.png
+texture podium uf_podium.png
+texture wood bookcase_side.png
+alphatexture projector projector.png
+clearcolor 0 0 0
+enable textures
+color 1 1 1
+pushMatrix
+translate 0 0.25 3
+pushMatrix
+	translate 0 0 -5
+	bindtexture window
+	rectangle 6 2.5 2 1
+popMatrix
+pushMatrix
+	translate 0 -1.25 -2.5
+	rotate -90 1 0 0 
+	bindtexture floor
+	rectangle 6 5 3 3
+popMatrix
+pushMatrix
+	translate 3 0 -2.5
+	rotate -90 0 1 0 
+	bindtexture dw_wall
+	rectangle 5 2.5
+popMatrix
+pushMatrix
+	translate -3 0 -2.5
+	rotate 90 0 1 0 
+	bindtexture window
+	rectangle 5 2.5
+popMatrix
+pushMatrix
+    enable blend
+    translate -1.6 0 -4.5
+	rotate 20 0 1 0
+	bindtexture projector
+	rectangle 2.5 2.5
+	disable blend
+popMatrix
+pushMatrix
+    translate 1.5 -0.65 -3
+	bindtexture podium
+	rectangle 0.5 1.2
+	bindtexture wood
+	pushMatrix
+	translate -0.25 -0.1 -0.15
+	rotate -90 0 1 0
+	rectangle 0.3 1
+	begin triangles
+	texcoord 0 1
+	vertex -0.15 0.5 0
+	texcoord 1 1
+	vertex 0.15 0.5 0
+	texcoord 1 0
+	vertex 0.15 0.7 0
+	end
+	popMatrix
+	pushMatrix
+	translate 0.25 -0.1 -0.15
+	rotate 90 0 1 0
+	rectangle 0.3 1
+	begin triangles
+	texcoord 0 1
+	vertex -0.15 0.5 0
+	texcoord 1 1
+	vertex 0.15 0.5 0
+	texcoord 0 0
+	vertex -0.15 0.7 0
+	end
+	popMatrix
+popMatrix
+popMatrix
+disable textures
